@@ -1,0 +1,17 @@
+<script setup>
+    import CartItem from './CartItem.vue';
+
+</script>
+
+
+<template>
+    <div class="flex flex-col flex-1 gap-4">
+        <CartItem
+            imageUrl="/sneakers/sneakers-1.jpg"
+            text="Zapatillas Nike Blazer Mid Suede"
+            :price = 350
+
+        />
+        <CartItem/>
+    </div>
+</template>
