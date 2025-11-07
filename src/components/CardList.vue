@@ -1,6 +1,10 @@
 <script setup>
     import ShopCard from './ShopCard.vue';
 
+    defineProps({
+        items: Array
+    })
+
     const onClickAdd = () => {
         alert('Add')
     }
@@ -10,9 +14,11 @@
 <template>
     <div class="grid grid-cols-4 gap-5">
         <ShopCard
-            imageUrl="/sneakers/sneakers-1.jpg"
-            title="Zapatillas Nike Blazer Mid Suede para hombre" 
-            :price="60"
+            v-for="item in items"
+            :key = "item.id"
+            :imageUrl="item.imageUrl"
+            :title="item.title" 
+            :price="item.price"
             :onClickAdd="onClickAdd"
             />
     </div>
